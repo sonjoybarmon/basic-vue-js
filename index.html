@@ -5,8 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn Basic Vue js</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+
+    <style>
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
     <h1>start now</h1>
+    <div id="app">
+      <p>hello i am {{title}}, and my age is {{age}}</p>
+      <button v-on:click="age++">Increase age</button>
+      <button v-on:click="age--">Decrease age</button>
+      <button @click="handleChange('sree barman')">change title</button>
+
+      <!-- condition rendering  -->
+      <!-- v-if='false' - data hind hoye jabe v-if= ' true' data show korbe -->
+      <p v-if="true">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt,
+        cumque culpa sint et, sunt accusamus labore, obcaecati aliquid sed
+        excepturi adipisci alias vel quasi quos corrupti quia? Eos reiciendis
+        id, dolorum ipsum error amet veritatis optio, ducimus est saepe sequi
+        fuga consequuntur sunt tempora, qui alias assumenda perspiciatis
+        deleniti quae!
+      </p>
+
+      <p v-if="dataShow">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt,
+        cumque culpa sint et, sunt accusamus labore, obcaecati aliquid sed
+        excepturi adipisci alias vel quasi quos corrupti quia? Eos reiciendis
+        id, dolorum ipsum error amet veritatis optio, ducimus est saepe sequi
+        fuga consequuntur sunt tempora, qui alias assumenda perspiciatis
+        deleniti quae!
+      </p>
+
+      <button @click="handleButton">
+        <span v-if="dataShow"> hind data </span>
+        <!-- <span v-if="!dataShow"> show data </span> -->
+        <span v-else> show data </span>
+      </button>
+
+      <div>
+        <div class="box" @mouseover="handleEvent">Mouse Over</div>
+        <div class="box" @mouseleave="handleEvent">Mouse Leave</div>
+        <div class="box" @dblclick="handleEvent">Mouse Double Click</div>
+        <div class="box" @mousemove="handleMouseMove">{{x}} {{y}}</div>
+        <div class="box" @mousemove="handleMouseMove">{{x}} {{y}}</div>
+        <div class="box" @mousemove="handleMouseMove">{{x}} {{y}}</div>
+      </div>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
